@@ -16,9 +16,11 @@ function App() {
       <Container>
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/pokemon/:pokemonName" element={<Pokemon />} />
-          <Home />
         </Routes>
+        <Routes>
+          <Route path="/pokemon/:pokemonName" element={<Pokemon />} />
+        </Routes>
+        <Home />
       </Container>
     </BrowserRouter>
   );
