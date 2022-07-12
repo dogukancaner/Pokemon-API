@@ -8,27 +8,13 @@ import ProcessBar from "../components/ProcessBar";
 const Pokemon = () => {
   let { pokemonName } = useParams();
   const [pokemonData, setPokemonData] = useState(null);
-
-  // const [pokemonSpecies, setPokemonSpecies] = useState(null);
-
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then((res) => {
-        console.log(res.data);
         setPokemonData(res.data);
       });
   }, [pokemonName]);
-
-  // useEffect(() => {
-  //   if (pokemonData) {
-  //     let url = pokemonData.species.url;
-  //     axios.get(url).then((res) => {
-  //       console.log(res.data);
-  //       setPokemonSpecies(res.data);
-  //     });
-  //   }
-  // }, [pokemonData]);
 
   return (
     <div>
