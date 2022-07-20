@@ -8,7 +8,7 @@ import HomeContainer from "../components/container/HomeContainer";
 const Home = () => {
   const [pokemon, setPokemon] = useState(null);
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/pokemon?limit=500").then((res) => {
+    axios.get("https://pokeapi.co/api/v2/pokemon?limit=18").then((res) => {
       setPokemon(res.data.results);
     });
   }, []);
