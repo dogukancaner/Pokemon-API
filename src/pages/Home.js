@@ -16,8 +16,8 @@ const Home = () => {
   return (
     <HomeContainer>
       {pokemon &&
-        pokemon.map((item) => {
-          return <Card key={item.name} name={item.name} />;
+        pokemon.map((item, index) => {
+          return <Card key={index} name={item.name} />;
         })}
     </HomeContainer>
   );

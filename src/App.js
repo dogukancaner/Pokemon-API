@@ -12,16 +12,13 @@ function App() {
     <BrowserRouter>
       <div>
         <SideNav />
+        <Container>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/pokemon/:pokemonName" element={<Pokemon />} />
+          </Routes>
+        </Container>
       </div>
-      <Container>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-        </Routes>
-        <Routes>
-          <Route path="/pokemon/:pokemonName" element={<Pokemon />} />
-        </Routes>
-        <Home />
-      </Container>
     </BrowserRouter>
   );
 }

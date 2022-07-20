@@ -32,9 +32,9 @@ const Pokemon = () => {
         <div style={{ marginLeft: "18px" }}>
           <h1 style={{ color: "#dc143c" }}>Stats</h1>
           {pokemonData &&
-            pokemonData.stats.map((item) => {
+            pokemonData.stats.map((item, index) => {
               return (
-                <div>
+                <div key={index}>
                   <span>{item.stat.name}</span>
                   <ProcessBar width={"250px"} value={item.base_stat} />
                 </div>
@@ -44,10 +44,10 @@ const Pokemon = () => {
         <div style={{ marginLeft: "30px", width: 100 }}>
           <h1 style={{ color: "#dc143c" }}>Abilities</h1>
           {pokemonData &&
-            pokemonData.abilities.map((item) => {
+            pokemonData.abilities.map((item, url) => {
               return (
                 <p
-                  key={item.url}
+                  key={url}
                   style={{
                     padding: 3,
                     border: "0.1px solid #dc143c",
@@ -68,10 +68,10 @@ const Pokemon = () => {
             }}
           >
             {pokemonData &&
-              pokemonData.moves.map((item) => {
+              pokemonData.moves.map((item, url) => {
                 return (
                   <p
-                    key={item.url}
+                    key={url}
                     style={{
                       padding: 3,
                       border: "0.1px solid #dc143c",
